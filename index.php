@@ -4,7 +4,7 @@
     <title>CI/CD</title>
     <style>
         body { 
-            background-color: red;
+            background-color: green;
             font-family: sans-serif;
             display: flex; justify-content: center; align-items: center; height: 100vh;
         }
