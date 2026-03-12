@@ -1,0 +1,24 @@
+name: Demo Deployment
+
+on:
+  push:
+    branches: [ main ] # Se déclenche à chaque modification sur 'main'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Server via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/demo
+            git pull origin main
+            # Ici on pourrait ajouter des tests ou du packaging
+            echo "Déploiement terminé avec succès !"
