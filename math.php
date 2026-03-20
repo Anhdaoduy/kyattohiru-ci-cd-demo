@@ -1,7 +1,7 @@
 <?php
 // La fonction à tester
 function multiplier($a, $b) {
-    return $a * $b;
+    return $a + $b;
 }
 
 $resultat = multiplier(2, 3);
