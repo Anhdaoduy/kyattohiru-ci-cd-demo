@@ -1,11 +1,26 @@
-name: Demo Deployment
+name: Demo CI/CD with Tests
 
 on:
   push:
-    branches: [ main ] # Se déclenche à chaque modification sur 'main'
+    branches: [ main ]
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Run Unit Tests
+        run: php test.php
+
   deploy:
+    needs: test # CRUCIAL : Le déploiement ne se lance que si 'test' réussit
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -20,5 +35,4 @@ jobs:
           script: |
             cd /var/www/demo
             git pull origin main
-            # Ici on pourrait ajouter des tests ou du packaging
-            echo "Déploiement terminé avec succès !"
+            echo "Le test a réussi, déploiement effectué !"
