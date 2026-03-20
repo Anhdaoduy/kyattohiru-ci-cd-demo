@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CI/CD</title>
+    <title>CI/CD Demo</title>
     <style>
         body { 
             background-color: green;
             font-family: sans-serif;
             display: flex; justify-content: center; align-items: center; height: 100vh;
         }
-        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
     </style>
 </head>
 <body>
