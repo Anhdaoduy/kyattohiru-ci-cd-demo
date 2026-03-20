@@ -12,7 +12,7 @@ $resultat = multiplier(2, 3);
     <title>CI/CD Demo</title>
     <style>
         body { 
-            background-color: #2ecc71;
+            background-color: #56FFDE;
             font-family: sans-serif;
             display: flex; justify-content: center; align-items: center; height: 100vh;
             margin: 0;
